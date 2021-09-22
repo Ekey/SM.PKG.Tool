@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     class SM_Cipher
     {

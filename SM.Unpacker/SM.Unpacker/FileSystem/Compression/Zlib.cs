@@ -3,7 +3,7 @@ using System.IO;
 
 using Ionic.Zlib;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     class Zlib
     {

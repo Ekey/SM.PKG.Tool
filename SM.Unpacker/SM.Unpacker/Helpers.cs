@@ -3,7 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     public static class Helpers
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     class Program
     {

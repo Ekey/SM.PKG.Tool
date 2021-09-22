@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     class PkgUnpack
     {
@@ -29,7 +29,7 @@ namespace SM.PKG.Unpacker
 
             Byte[] lpTable = new Byte[dwTableSize];
             lpTable = TFileStream.ReadBytes((Int32)dwTableSize);
-            lpTable = SM_Cipher.Decrypt(lpTable, (Int32)dwTableSize);
+            lpTable = SM_Cipher.iDecryptData(lpTable, (Int32)dwTableSize);
 
             using (MemoryStream TMemoryStream = new MemoryStream(lpTable))
             {

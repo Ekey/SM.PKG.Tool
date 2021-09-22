@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SM.PKG.Unpacker
+namespace SM.Unpacker
 {
     class Utils
     {
