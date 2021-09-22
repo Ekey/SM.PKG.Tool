@@ -56,10 +56,10 @@ namespace SM.PKG.Unpacker
                     {
                         var lpBuffer = TFileStream.ReadBytes((Int32)dwZSize);
                         var lpOutBuffer = Zlib.iDecompress(lpBuffer, (Int32)dwZSize);
-                        lpOutBuffer = SM_Cipher.Decrypt(lpOutBuffer, (Int32)dwSize);
+                        lpOutBuffer = SM_Cipher.iDecryptData(lpOutBuffer, (Int32)dwSize);
                         if (dwSmallCrypt == 1)
                         {
-                            lpOutBuffer = SM_Cipher.DecryptAdditional(lpOutBuffer);
+                            lpOutBuffer = SM_Cipher.iDecryptLittleBlock(lpOutBuffer);
                         }
 
                         File.WriteAllBytes(m_FullPath, lpOutBuffer);
@@ -67,10 +67,10 @@ namespace SM.PKG.Unpacker
                     else
                     {
                         var lpBuffer = TFileStream.ReadBytes((Int32)dwSize);
-                        lpBuffer = SM_Cipher.Decrypt(lpBuffer, (Int32)dwSize);
+                        lpBuffer = SM_Cipher.iDecryptData(lpBuffer, (Int32)dwSize);
                         if (dwSmallCrypt == 1)
                         {
-                            lpBuffer = SM_Cipher.DecryptAdditional(lpBuffer);
+                            lpBuffer = SM_Cipher.iDecryptLittleBlock(lpBuffer);
                         }
 
                         File.WriteAllBytes(m_FullPath, lpBuffer);

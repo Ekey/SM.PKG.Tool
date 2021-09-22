@@ -38,7 +38,7 @@ namespace SM.PKG.Unpacker
            0x66063BCA, 0x11010B5C, 0x8F659EFF, 0xF862AE69, 0x616BFFD3, 0x166CCF45, 0xA00AE278, 0xD70DD2EE,
            0x4E048354, 0x3903B3C2, 0xA7672661, 0xD06016F7, 0x4969474D, 0x3E6E77DB, 0xAED16A4A, 0xD9D65ADC};
 
-        public static Byte[] Decrypt(Byte[] lpBuffer, Int32 dwSize)
+        public static Byte[] iDecryptData(Byte[] lpBuffer, Int32 dwSize)
         {
             Int32 dwRemained = dwSize % 4;
             Int32 dwIndex = dwSize & 0xff;
@@ -77,7 +77,7 @@ namespace SM.PKG.Unpacker
             return lpBuffer;
         }
 
-        public static Byte[] DecryptAdditional(Byte[] lpBuffer)
+        public static Byte[] iDecryptLittleBlock(Byte[] lpBuffer)
         {
             Int32 dwOffset = 0;
             for (Int32 i = 0; i < 32; i++)
